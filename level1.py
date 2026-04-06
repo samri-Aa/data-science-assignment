@@ -1,21 +1,18 @@
-def is_prime(n):
-    """
-    Function to check if a number is prime.
-    A prime number is only divisible by 1 and itself.
-    """
-    if n <= 1:
+def is_prime(n: int) -> bool:
+    # Validate base cases per mathematical definition of primality
+    if n < 2:
         return False
-    
-    for i in range(2, int(n ** 0.5) + 1):
+    # Iterate only up to the square root for optimal performance
+    for i in range(2, int(n**0.5) + 1):
         if n % i == 0:
             return False
-    
     return True
 
-
-# Example usage
-num = int(input("Enter a number: "))
-if is_prime(num):
-    print(f"{num} is a prime number.")
-else:
-    print(f"{num} is not a prime number.")
+if name == "main":
+    # Ensure clean input handling and clear user feedback
+    try:
+        num = int(input("Enter an integer: "))
+        status = "prime" if is_prime(num) else "not prime"
+        print(f"{num} is {status}.")
+    except ValueError:
+        print("Invalid input. Please provide a whole number.")
