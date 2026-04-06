@@ -1,32 +1,31 @@
-# Define modular arithmetic functions as instructed
-def add(a, b): return a + b
-def subtract(a, b): return a - b
-def multiply(a, b): return a * b
-def divide(a, b):
-    if b == 0: raise ValueError("Division by zero is undefined.")
-    return a / b
+# Define arithmetic operations using lambda functions for brevity
+OPS = {
+    "+": lambda a, b: a + b,
+    "-": lambda a, b: a - b,
+    "*": lambda a, b: a * b,
+    "/": lambda a, b: a / b if b != 0 else "Error: Division by zero"
+}
 
-# Map string operators to corresponding functions
-OPS = {"+": add, "-": subtract, "*": multiply, "/": divide}
+print("CLI Calculator | Type 'exit' to quit")
 
-def main():
-    print("CLI Calculator | Type 'exit' to quit")
-    while True:
-        try:
-            # Parse user input into three distinct components
-            expr = input("Enter <num1> <operator> <num2> > ").strip()
-            if expr.lower() == "exit":
-                print("Calculator closed.")
-                break
-                
-            n1_str, op, n2_str = expr.split()
-            n1, n2 = float(n1_str), float(n2_str)
+while True:
+    try:
+        expr = input("Enter <num1> <op> <num2> > ").strip()
+        
+        if expr.lower() == "exit":
+            print("Calculator closed.")
+            break
+        
+        # Parse input and validate format
+        n1, op, n2 = expr.split()
+        n1, n2 = float(n1), float(n2)
+        
+        # Execute operation if operator is valid
+        if op in OPS:
+            result = OPS[op](n1, n2)
+            print(f"Result: {result}\n")
+        else:
+            print("Error: Unsupported operator. Use +, -, *, /\n")
             
-            # Execute operation and display formatted result
-            print(f"Result: {OPS[op](n1, n2)}\n")
-        except (ValueError, KeyError):
-            # Handle malformed input or unsupported operators cleanly
-            print("Error: Use format '<number> <+/−/*/> <number>'\n")
-
-if name == "main":
-    main()
+    except ValueError:
+        print("Error: Invalid input. Use format: <number> <op> <number>\n")
