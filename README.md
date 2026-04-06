@@ -1,24 +1,22 @@
 # Python Foundations: Daily Assignment
 
-This repository contains my solutions for today's Python Foundations assignment. I selected one task from each difficulty level and focused on writing clean, functional code that adheres to standard Python practices.
+This repository contains my solutions for the Python Foundations daily task. I selected one challenge from each level and focused on keeping the code clean and functional.
 
-## Implementation Details
+## What I Built
 
-### Level 1: Prime Number Checker (level_1_prime.py)
-This script evaluates whether a given integer is prime. It uses a straightforward trial division method that only checks factors up to the square root of the input number, which keeps the computation efficient. The code includes basic input validation to handle non-integer entries gracefully.
+Level 1: Prime Checker (level_1_prime.py)  
+Checks if a number is prime. I used a loop that runs up to the square root of the number to keep it efficient. The script also validates input to prevent crashes on non-integer entries.
 
-### Level 2: Fibonacci Sequence Generator (level_2_fibonacci.py)
-This program generates a Fibonacci sequence based on a user-specified term count. I opted for an iterative approach rather than recursion to avoid stack overflow issues with larger inputs and to maintain predictable memory usage. It safely handles edge cases like zero or negative term requests.
+Level 2: Fibonacci Generator (level_2_fibonacci.py)  
+Generates a Fibonacci sequence based on user input. I chose an iterative approach instead of recursion to avoid memory issues with larger numbers. It handles edge cases like zero or negative terms safely.
 
-### Level 3: CLI Calculator (level_3_calculator.py)
-A simple command-line calculator that performs basic arithmetic operations. Each operation is handled by a dedicated function, which promotes modularity and makes the code easier to test and extend. The calculator runs in a continuous loop, parses user input dynamically, and includes explicit error handling for malformed expressions and division by zero.
+Level 3: CLI Calculator (level_3_calculator.py)  
+A command-line calculator that runs in a continuous loop. I streamlined the logic by using a dictionary to map operators to functions. It catches errors like division by zero and invalid formats gracefully.
 
 ## How to Run
-Ensure you have Python 3.6 or higher installed. You can run each script independently from the terminal:
+
+You need Python 3.6 or newer installed. Open your terminal in this folder and run each script:
+
 python level_1_prime.py
 python level_2_fibonacci.py
 python level_3_calculator.py
-## Video Demonstration
-I have recorded a brief walkthrough demonstrating how each script functions, including standard usage and edge-case handling. You can view the recording here: [Insert Loom Link]
-
-Thank you for reviewing my submission. Please let me know if you require any adjustments or additional documentation.
